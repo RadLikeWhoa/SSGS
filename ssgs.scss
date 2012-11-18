@@ -31,17 +31,17 @@ $gutters: 1.5em;
  */
 
 .clearfix {
-  *zoom: 1;
+    *zoom: 1;
 
-  &::before,
-  &::after {
-    content: " ";
-    display: table;
-  }
+    &::before,
+    &::after {
+        content: " ";
+        display: table;
+    }
 
-  &::after {
-    clear: both;
-  }
+    &::after {
+        clear: both;
+    }
 }
 
 /**
@@ -142,6 +142,6 @@ $gutters: 1.5em;
  */
 
 .grid {
-  @extend .clearfix;
-  margin-left: -$gutters;
+    @extend .clearfix;
+    margin-left: -$gutters;
 }
