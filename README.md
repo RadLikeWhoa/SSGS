@@ -23,7 +23,7 @@ It's a fully fluid six-column grid with fixed-width gutters. It takes only one v
 
 ```css
 .item {
-    @extend .col;
+    @include grid-col;
 
     @media (min-width: 30em) {
         @include grid-col("one half");
