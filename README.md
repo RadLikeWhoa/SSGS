@@ -21,7 +21,7 @@ It's a fully fluid six-column grid with fixed-width gutters. It takes **only one
 </div>
 ```
 
-```css
+```scss
 .item {
     @include grid-col;
 
