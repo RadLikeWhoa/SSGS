@@ -8,7 +8,7 @@ It's a fully fluid six-column grid with fixed-width gutters. It takes **only one
 
 ## Links
 
-[View the demo](http://codepen.io/RadLikeWhoa/full/mLIkK "Hosted on CodePen") or [download it right away](https://github.com/RadLikeWhoa/SSGS/zipball/master).
+[View the demo](http://codepen.io/sacha/full/mLIkK "Hosted on CodePen") or [download it right away](https://github.com/RadLikeWhoa/SSGS/zipball/master).
 
 ## Usage
 
