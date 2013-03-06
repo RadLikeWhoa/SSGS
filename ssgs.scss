@@ -30,7 +30,7 @@ $gutters: 1.5em;
  * (see: http://nicolasgallagher.com/micro-clearfix-hack/)
  */
 
-.clearfix {
+%clearfix {
     *zoom: 1;
 
     &::before,
@@ -81,16 +81,16 @@ $gutters: 1.5em;
         }
     }
  */
- 
-.grid-col {
+
+%grid-col {
     display: block; // So all kinds of elements can be used as grid containers.
     float: left;
     padding-left: $gutters;
 }
 
 @mixin grid-col ($width: "full") {
-    @extend .grid-col;
-    
+    @extend %grid-col;
+
     @if $width == "one half" or $width == "two quarters" or $width == "three sixths" or $width == "1/2" or $width == "2/4" or $width == "3/6" {
         width: 50%;
     } @else if $width == "one third" or $width == "two sixths" or $width == "1/3" or $width == "2/6" {
@@ -146,6 +146,6 @@ $gutters: 1.5em;
  */
 
 .grid {
-    @extend .clearfix;
+    @extend %clearfix;
     margin-left: -$gutters;
 }

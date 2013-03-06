@@ -47,8 +47,6 @@ It's a fully fluid six-column grid with fixed-width gutters. It takes **only one
 
 The only drawback I can think of right now is the dependency on `box-sizing: border-box;` to work properly. But that's only an issue if you work with IE prior to version 8. And there's even a neat [polyfill](https://github.com/Schepp/box-sizing-polyfill "Christian Schaefer's box-sizing polyfill.") available on GitHub. Since you're already working with Sass, just pop in Compass and import `compass/css3/box-sizing` to make it even easier.
 
-And by the way, there's even a [plain old CSS version](http://sachaschmid.ch/ssgs/ssgs.css "Boo, you don't really use only CSS anymore, right?") available if you're really resistant to awesome technology like Sass.
-
 ## About the Author
 
 My name is [Sacha](http://sachaschmid.ch) and I'm a 'front-end engineer' thingy from Switzerland. I tweet at [@RadLikeWhoa_](http://twitter.com/RadLikeWhoa_). I am also the creater of [kids](http://codepen.io/RadLikeWhoa/full/cAJEo) and [Readr](http://readrtheme.tumblr.com).
