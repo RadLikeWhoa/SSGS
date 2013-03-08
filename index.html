@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="SSGS is an easy-to-use grid system for the web. It allows you to quickly set up a responsive grid system using Sass.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SSGS—Super Simple Grid System</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <section id="intro">
+      <div class="wrap">
+        <h1>SSGS—Super Simple Grid System</h1>
+        <p class="intro">SSGS is a very basic grid system for the web. It allows you to quickly set up a responsive grid system using Sass.</p>
+        <a class="button button-primary" href="https://raw.github.com/RadLikeWhoa/SSGS/master/ssgs.scss" title="Get SSGS from GitHub.">Download</a>
+        <a class="button" href="http://github.com/RadLikeWhoa/ssgs" title="View SSGS on GitHub.">Fork on GitHub</a>
+      </div>
+    </section>
+    <section id="grid">
+      <div class="wrap-wide">
+        <div class="grid">
+          <div class="display-item"><div class="box"></div></div>
+          <div class="display-item"><div class="box"></div></div>
+          <div class="display-item"><div class="box"></div></div>
+          <div class="display-item"><div class="box"></div></div>
+          <div class="display-item"><div class="box"></div></div>
+          <div class="display-item"><div class="box"></div></div>
+        </div>
+      </div>
+    </section>
+    <section id="detail">
+      <div class="wrap">
+        <h2>What's special about SSGS?</h2>
+        <p>It's a fully fluid six-column grid with fixed-width gutters. It takes <b>only one variable</b> (the width of the gutters) so it's refreshingly easy to set up and use. There's no need to clutter your HTML with lots and lots of classes as you can easily use Sass's <b><code class="language-css">@extend</code></b> function. Oh, and did I mention it's only about 60 lines of code?</p>
+        <h2>Usage</h2>
+        <div class="grid">
+          <div class="code-sample">
+            <h3>HTML</h3>
+            <div class="code">
+              <pre><code class="language-markup"><span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">class</span>=<span class="attribute">"</span><span class="attribute-value">grid</span><span class="attribute">"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">class</span>=<span class="attribute">"</span><span class="attribute-value">grid</span><span class="attribute">"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">class</span>=<span class="attribute">"</span><span class="attribute-value">grid</span><span class="attribute">"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">class</span>=<span class="attribute">"</span><span class="attribute-value">grid</span><span class="attribute">"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">class</span>=<span class="attribute">"</span><span class="attribute-value">grid</span><span class="attribute">"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span></code></pre>
+            </div>
+          </div>
+          <div class="code-sample">
+            <h3>SCSS</h3>
+            <div class="code">
+              <pre><code class="language-css">.<span class="selector">item</span> {
+    @<span class="include">include</span> <span class="mixin">grid-col</span>;
+
+    @<span class="media">media</span> (<span class="property">min-width</span>: <span class="number">30</span><span class="value">em</span>) {
+        @<span class="include">include</span> <span class="mixin">grid-col</span>(<span class="string">"one half"</span>);
+    }
+
+    @<span class="media">media</span> (<span class="property">min-width</span>: <span class="number">40</span><span class="value">em</span>) {
+        @<span class="include">include</span> <span class="mixin">grid-col</span>(<span class="string">"one third"</span>);
+    }
+
+    @<span class="media">media</span> (<span class="property">min-width</span>: <span class="number">50</span><span class="value">em</span>) {
+        @<span class="include">include</span> <span class="mixin">grid-col</span>(<span class="string">"one quarter"</span>);
+    }
+
+    @<span class="media">media</span> (<span class="property">min-width</span>: <span class="number">60</span><span class="value">em</span>) {
+        @<span class="include">include</span> <span class="mixin">grid-col</span>(<span class="string">"one sixth"</span>);
+    }
+}</code></pre>
+            </div>
+          </div>
+        </div>
+        <p>Yep, <b>that's it</b>.</p>
+      </div>
+    </section>
+    <section id="drawbacks">
+      <div class="wrap">
+        <h2>Drawbacks</h2>
+        <p>The only drawback I can think of right now is the dependency on <code class="language-css">box-sizing: border-box;</code> to work properly. But that's only an issue if you work with IE prior to version 8. And there's even a neat <a href="https://github.com/Schepp/box-sizing-polyfill" title="Christian Schaefer's box-sizing polyfill.">polyfill</a> available on GitHub. Since you're already working with Sass, just pop in Compass and import <code class="language-css">"compass/css3/box-sizing"</code> to make it even easier.</p>
+        <p>SSGS was initially created on <a href="http://codepen.io/RadLikeWhoa/pen/mLIkK">CodePen</a>.</p>
+      </div>
+    </section>
+    <footer>
+      <div class="wrap-narrow">
+        <p class="small copyright">SSGS is a thing by <a href="http://sachaschmid.ch" title="My personal website">Sacha Schmid</a>, created on <a href="http://codepen.io" title="CodePen is freaking awesome. Go try it out.">CodePen</a>. I tweet at <a href="http://twitter.com/RadLikeWhoa_">@RadLikeWhoa_</a>. </p>
+        <p class="small copyright">You can also check out <a href="http://codepen.io/RadLikeWhoa/" title="I created some nice things. Why don't you go look at them?">my other stuff</a>, including <a href="http://codepen.io/RadLikeWhoa/full/cAJEo" title="An awesome nth-child tester for the web.">:kids</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>
