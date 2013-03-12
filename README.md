@@ -4,11 +4,15 @@ SSGS is a very basic grid system for the web. It allows you to quickly set up a 
 
 ## What's special about SSGS?
 
-It's a fully fluid six-column grid with fixed-width gutters. It takes **only one variable** (the width of the gutters) so it's refreshingly easy to set up and use. There's no need to clutter your HTML with lots and lots of classes as you can easily use Sass's **`@extend`** function. Oh, and did I mention it's only about 60 lines of code?
+It's a fully fluid six-column grid with fixed-width gutters. It takes **only one variable** (the width of the gutters) so it's refreshingly easy to set up and use. There's no need to clutter your HTML with lots and lots of classes as you can easily use Sass's **`@extend`** function. Oh, and did I mention it's only about 60 lines of (unprocessed) code?
 
-## Links
+[View the demo](http://radlikewhoa.github.com/SSGS)
 
-[View the demo](http://radlikewhoa.github.com/SSGS) or [download it right away](https://raw.github.com/RadLikeWhoa/SSGS/master/ssgs.scss).
+## Installation
+
+* Using [bower](http://github.com/twitter/bower): `bower install SSGS`
+* Clone the git repo: `git clone git@github.com:RadLikeWhoa/SSGS.git`
+* Get the [.scss file](https://raw.github.com/RadLikeWhoa/SSGS/master/ssgs.scss) directly
 
 ## Usage
 
@@ -45,8 +49,8 @@ It's a fully fluid six-column grid with fixed-width gutters. It takes **only one
 
 ## Drawbacks & Stuff
 
-The only drawback I can think of right now is the dependency on `box-sizing: border-box;` to work properly. But that's only an issue if you work with IE prior to version 8. And there's even a neat [polyfill](https://github.com/Schepp/box-sizing-polyfill "Christian Schaefer's box-sizing polyfill.") available on GitHub. Since you're already working with Sass, just pop in Compass and import `compass/css3/box-sizing` to make it even easier.
+The only drawback I can think of right now is the dependency on `box-sizing: border-box;` to work properly. But that's only an issue if you work with IE prior to version 8. And there's even a neat [polyfill](https://github.com/Schepp/box-sizing-polyfill) available on GitHub. Since you're already working with Sass, just pop in Compass and import `compass/css3/box-sizing` to make it even easier.
 
 ## About the Author
 
-My name is [Sacha](http://sachaschmid.ch) and I'm a 'front-end engineer' thingy from Switzerland. I tweet at [@RadLikeWhoa_](http://twitter.com/RadLikeWhoa_). I am also the creater of [kids](http://codepen.io/RadLikeWhoa/full/cAJEo) and [Readr](http://readrtheme.tumblr.com).
+My name is [Sacha](http://sachaschmid.ch) and I'm a 'front-end engineer' thingy from Switzerland. I tweet at [@RadLikeWhoa_](http://twitter.com/RadLikeWhoa_). I am also the creater of [:kids](http://codepen.io/RadLikeWhoa/full/cAJEo) and [Readr](http://readrtheme.tumblr.com).
