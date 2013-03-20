@@ -53,4 +53,4 @@ The only drawback I can think of right now is the dependency on `box-sizing: bor
 
 ## About the Author
 
-My name is [Sacha](http://sachaschmid.ch) and I'm a 'front-end engineer' thingy from Switzerland. I tweet at [@RadLikeWhoa_](http://twitter.com/RadLikeWhoa_). I am also the creater of [:kids](http://codepen.io/RadLikeWhoa/full/cAJEo) and [Readr](http://readrtheme.tumblr.com).
+My name is [Sacha](http://sachaschmid.ch) and I'm a front-end engineer from Switzerland. I tweet at [@sachaschmid](http://twitter.com/sachaschmid). I am also the creater of [Countable](http://radlikewhoa.github.com/Countable) and [:kids](http://codepen.io/RadLikeWhoa/full/cAJEo).
