@@ -6,11 +6,11 @@ SSGS is a very basic grid system for the web. It allows you to quickly set up a 
 
 It's a fully fluid six-column grid with fixed-width gutters. It takes **only one variable** (the width of the gutters) so it's refreshingly easy to set up and use. There's no need to clutter your HTML with lots and lots of classes as you can easily use Sass's **`@extend`** function. Oh, and did I mention it's only about 60 lines of (unprocessed) code?
 
-[View the demo](http://radlikewhoa.github.com/SSGS)
+[View the demo](http://sacha.me/SSGS)
 
 ## Installation
 
-* Using [bower](http://github.com/twitter/bower): `bower install SSGS`
+* Using [bower](https://github.com/bower/bower): `bower install SSGS`
 * Clone the git repo: `git clone git@github.com:RadLikeWhoa/SSGS.git`
 * Get the [.scss file](https://raw.github.com/RadLikeWhoa/SSGS/master/ssgs.scss) directly
 
@@ -50,7 +50,3 @@ It's a fully fluid six-column grid with fixed-width gutters. It takes **only one
 ## Drawbacks & Stuff
 
 The only drawback I can think of right now is the dependency on `box-sizing: border-box;` to work properly. But that's only an issue if you work with IE prior to version 8. And there's even a neat [polyfill](https://github.com/Schepp/box-sizing-polyfill) available on GitHub. Since you're already working with Sass, just pop in Compass and import `compass/css3/box-sizing` to make it even easier.
-
-## About the Author
-
-My name is [Sacha](http://sachaschmid.ch) and I'm a front-end engineer from Switzerland. I tweet at [@sachaschmid](http://twitter.com/sachaschmid). I am also the creater of [Countable](http://radlikewhoa.github.com/Countable) and [:kids](http://codepen.io/RadLikeWhoa/full/cAJEo).
