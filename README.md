@@ -1,52 +1,38 @@
-# SSGS—Super Simple Grid System
+# [Super Simple Grid System](http://sacha.me/SSGS)
 
-SSGS is a very basic grid system for the web. It allows you to quickly set up a responsive grid system using Sass.
+SSGS is a very easy-to-use grid system for the web. It allows you to quickly set up a responsive grid system using Sass.
+
+[View it in action](http://sacha.me/SSGS)
 
 ## What's special about SSGS?
 
-It's a fully fluid six-column grid with fixed-width gutters. It takes **only one variable** (the width of the gutters) so it's refreshingly easy to set up and use. There's no need to clutter your HTML with lots and lots of classes as you can easily use Sass's **`@extend`** function. Oh, and did I mention it's only about 60 lines of (unprocessed) code?
+With SSGS, creating a responsive grid system is easy. You set your breakpoints, your gutters, include the file and then you're done. Yeah, it's really that easy. However, if you're happy with the default options you don't even have to set anything at all, just including the file is enough.
 
-[View the demo](http://sacha.me/SSGS)
+SSGS uses something similar to the [AMCSS](http://amcss.github.io) syntax for its components. You create grids using `data-grid` and columns using `data-col`. Modifiers are passed as the attribute value. Once you see an example you'll understand it right away.
+
+To keep things small and efficient, SSGS's CSS output is optimised to be as small as possible so you don't have to worry about code bloat.
 
 ## Installation
 
 * Using [bower](https://github.com/bower/bower): `bower install SSGS`
-* Clone the git repo: `git clone git@github.com:RadLikeWhoa/SSGS.git`
 * Get the [.scss file](https://raw.github.com/RadLikeWhoa/SSGS/master/ssgs.scss) directly
 
 ## Usage
 
 ```html
-<div class="grid">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
+<div data-grid>
+  <div data-col="1-2 M1-4"></div>
+  <div data-col="1-2 M1-4"></div>
+  <div data-col="1-2 M1-4"></div>
+  <div data-col="1-2 M1-4"></div>
 </div>
 ```
 
 ```scss
-.item {
-    @include grid-col;
+$ssgs-columns: 2 4;
+$ssgs-prefixes: (
+  'M': '(min-width: 30em)'
+);
 
-    @media (min-width: 30em) {
-        @include grid-col("one half");
-    }
-
-    @media (min-width: 40em) {
-        @include grid-col("one third");
-    }
-
-    @media (min-width: 50em) {
-        @include grid-col("one quarter");
-    }
-
-    @media (min-width: 60em) {
-        @include grid-col("one sixth");
-    }
-}
+@include 'ssgs';
 ```
-
-## Drawbacks & Stuff
-
-The only drawback I can think of right now is the dependency on `box-sizing: border-box;` to work properly. But that's only an issue if you work with IE prior to version 8. And there's even a neat [polyfill](https://github.com/Schepp/box-sizing-polyfill) available on GitHub. Since you're already working with Sass, just pop in Compass and import `compass/css3/box-sizing` to make it even easier.

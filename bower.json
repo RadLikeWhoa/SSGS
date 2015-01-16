@@ -1,6 +1,9 @@
 {
   "name": "SSGS",
   "description": "SSGS is an easy-to-use grid system for the web. It allows you to quickly set up a responsive grid system using Sass.",
-  "version": "1.2.0",
-  "main": "ssgs.scss"
+  "version": "2.0.0",
+  "main": "ssgs.scss",
+  "keywords": [ "scss", "grid", "responsive" ],
+  "authors": [ "Sacha Schmid (http://sacha.me)" ],
+  "homepage": "http://sacha.me/SSGS"
 }
