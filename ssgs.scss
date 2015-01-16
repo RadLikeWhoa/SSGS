@@ -40,18 +40,36 @@ $ssgs-gutters: 1.5em !default; /* [5] */
 @mixin _column-setup ($prefix: false) {
   $cache: ();
 
+  // Loop through all the column groups, i.e. halves, thirds, etc.
+
   @each $group in $columns {
     $include: ();
+
+    // Check if we're dealing with a one-dimensional list entry (e.g. '2') or a
+    // two-dimensional list (e.g. '3 (1, 2)').
 
     @if (length($group) == 2) {
       $include: nth($group, 2);
       $group: nth($group, 1);
     }
 
+    // Take all fractions for the current group into account (e.g. '1-4, 2-4,
+    // 3-4').
+
     @for $i from 1 to $group {
+
+      // Only include the current fraction if we're dealing with a one-
+      // dimensional list or if it's included in the nested second.
+
       @if length($include) == 0 or (length($include) and index($include, $i)) {
         $value: 100% / $group * $i;
         $index: index($cache, $value);
+
+        // To avoid duplicate widths we're caching the ones we've already dealt
+        // with. That means columns like 1-2, 2-4, 3-6 will share a common
+        // selector.
+        // This part also sets up the placeholder selectors we'll extend later
+        // on if the current width has not yet been encountered.
 
         @if not $index {
           $cache: append($cache, $value);
@@ -59,6 +77,9 @@ $ssgs-gutters: 1.5em !default; /* [5] */
 
           %#{$prefix + '-' + $index} { width: $value; }
         }
+
+        // Construct the actual selector, with or without prefix and extend the
+        // placeholder selector created above.
 
         $selector: if($prefix, $prefix, "") + $i + '-' + $group;
 
@@ -110,11 +131,16 @@ $ssgs-gutters: 1.5em !default; /* [5] */
 
 /**
  * Use columns as data-col components. Pass the column definitions as attribute
- * values. If no value is given, the column will just span the full width. The
- * following example will create a half-width column in all contexts that
+ * values. If no value is given, the column will just span the full width.
+ *
+ * The following example will create a half-width column in all contexts that
  * changes to a quarter-width column on a first media query and to a fifth-width
  * column on another media query. For more information on this behaviour, see
  * option [3].
+ *
+ * Make sure you only use column components for structure, not for style. The
+ * gutters are created using paddings, so your backgrounds or borders would not
+ * work as you intended.
  *
  * Example:
  * <div data-col="1-2 M1-4 L1-5"></div>
@@ -125,6 +151,7 @@ $ssgs-gutters: 1.5em !default; /* [5] */
   width: 100%;
   float: left;
   padding-left: $gutters;
+  box-sizing: border-box;
 }
 
 /**
