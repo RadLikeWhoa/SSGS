@@ -5,5 +5,6 @@
   "main": "ssgs.scss",
   "keywords": [ "scss", "grid", "responsive" ],
   "authors": [ "Sacha Schmid (http://sacha.me)" ],
-  "homepage": "http://sacha.me/SSGS"
+  "homepage": "http://sacha.me/SSGS",
+  "license": "MIT"
 }
