@@ -47,7 +47,7 @@ $ssgs-gutters: 1.5em !default; /* [5] */
 
   // Loop through all the column groups, i.e. halves, thirds, etc.
 
-  @each $group in $columns {
+  @each $group in $ssgs-columns {
     $include: ();
 
     // Check if we're dealing with a one-dimensional list entry (e.g. '2') or a
@@ -88,7 +88,7 @@ $ssgs-gutters: 1.5em !default; /* [5] */
 
         $selector: if($prefix, $prefix, "") + $i + '-' + $group;
 
-        [data-#{$grid-columns-namespace}~="#{$selector}"] {
+        [data-#{$ssgs-columns-namespace}~="#{$selector}"] {
           @extend %#{$prefix + '-' + $index};
         }
       }
@@ -111,9 +111,9 @@ $ssgs-gutters: 1.5em !default; /* [5] */
  * </div>
  */
 
-[data-#{$grid-namespace}] {
+[data-#{$ssgs-namespace}] {
   display: block;
-  margin-left: -$gutters;
+  margin-left: -$ssgs-gutters;
 
   &:after {
     content: "";
@@ -122,14 +122,14 @@ $ssgs-gutters: 1.5em !default; /* [5] */
   }
 }
 
-[data-#{$grid-namespace}~="rev"] [data-#{$grid-columns-namespace}] {
+[data-#{$ssgs-namespace}~="rev"] [data-#{$ssgs-columns-namespace}] {
   float: right;
 }
 
-[data-#{$grid-namespace}~="gutterless"] {
+[data-#{$ssgs-namespace}~="gutterless"] {
   margin-left: 0;
 
-  [data-#{$grid-columns-namespace}] {
+  [data-#{$ssgs-columns-namespace}] {
     padding-left: 0;
   }
 }
@@ -151,11 +151,11 @@ $ssgs-gutters: 1.5em !default; /* [5] */
  * <div data-col="1-2 M1-4 L1-5"></div>
  */
 
-[data-#{$grid-columns-namespace}] {
+[data-#{$ssgs-columns-namespace}] {
   display: block;
   width: 100%;
   float: left;
-  padding-left: $gutters;
+  padding-left: $ssgs-gutters;
   box-sizing: border-box;
 }
 
@@ -168,7 +168,7 @@ $ssgs-gutters: 1.5em !default; /* [5] */
 
 @include _column-setup();
 
-@each $prefix, $media-query in $column-prefixes {
+@each $prefix, $media-query in $ssgs-prefixes {
   @media #{$media-query} {
     @include _column-setup($prefix);
   }
