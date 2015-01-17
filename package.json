@@ -1,0 +1,12 @@
+{
+  "name": "SSGS",
+  "devDependencies": {
+    "autoprefixer-core": "^5.0.0",
+    "css-mqpacker": "^3.0.0",
+    "gulp": "^3.8.10",
+    "gulp-csso": "^0.2.9",
+    "gulp-postcss": "^4.0.1",
+    "gulp-ruby-sass": "^1.0.0-alpha",
+    "postcss": "^4.0.1"
+  }
+}
