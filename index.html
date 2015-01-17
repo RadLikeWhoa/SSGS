@@ -4,87 +4,101 @@
     <meta charset="utf-8">
     <meta name="description" content="SSGS is an easy-to-use grid system for the web. It allows you to quickly set up a responsive grid system using Sass.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SSGS—Super Simple Grid System</title>
+    <title>SSGS — Super Simple Grid System</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <section id="intro">
       <div class="wrap">
-        <h1>SSGS—Super Simple Grid System</h1>
-        <p class="intro">SSGS is a very basic grid system for the web. It allows you to quickly set up a responsive grid system using Sass.</p>
-        <a class="button button-primary" href="https://raw.github.com/RadLikeWhoa/SSGS/master/ssgs.scss" title="Get SSGS from GitHub.">Download</a>
-        <a class="button" href="http://github.com/RadLikeWhoa/ssgs" title="View SSGS on GitHub.">Fork on GitHub</a>
+        <h1>SSGS — Super Simple Grid System</h1>
+        <p class="intro">SSGS is an easy-to-use grid system for the web. It allows you to quickly set up a responsive grid system using Sass. Created by <a href="http://sacha.me">Sacha Schmid</a>.</p>
+        <a data-button="primary" href="https://raw.github.com/RadLikeWhoa/SSGS/master/ssgs.scss" title="Get SSGS from GitHub.">Download</a>
+        <a data-button href="http://github.com/RadLikeWhoa/ssgs" title="View SSGS on GitHub.">Fork on GitHub</a>
       </div>
     </section>
     <section id="grid">
-      <div class="wrap-wide">
-        <div class="grid">
-          <div class="display-item"><div class="box"></div></div>
-          <div class="display-item"><div class="box"></div></div>
-          <div class="display-item"><div class="box"></div></div>
-          <div class="display-item"><div class="box"></div></div>
-          <div class="display-item"><div class="box"></div></div>
-          <div class="display-item"><div class="box"></div></div>
+      <div class="wrap">
+        <div data-grid>
+          <div data-col="1-2"><div class="box"></div></div>
+          <div data-col="1-2"><div class="box"></div></div>
+          <div data-col="1-4"><div class="box"></div></div>
+          <div data-col="2-4"><div class="box"></div></div>
+          <div data-col="1-4"><div class="box"></div></div>
+          <div data-col="1-5"><div class="box"></div></div>
+          <div data-col="1-5"><div class="box"></div></div>
+          <div data-col="1-5"><div class="box"></div></div>
+          <div data-col="1-5"><div class="box"></div></div>
+          <div data-col="1-5"><div class="box"></div></div>
+          <div data-col="1-3"><div class="box"></div></div>
+          <div data-col="2-3"><div class="box"></div></div>
         </div>
       </div>
     </section>
     <section id="detail">
       <div class="wrap">
         <h2>What's special about SSGS?</h2>
-        <p>It's a fully fluid six-column grid with fixed-width gutters. It takes <b>only one variable</b> (the width of the gutters) so it's refreshingly easy to set up and use. There's no need to clutter your HTML with lots and lots of classes as you can easily use Sass's <b><code class="language-css">@extend</code></b> function. Oh, and did I mention it's only about 60 lines of code?</p>
+        <p>With SSGS, creating a responsive grid system is easy. You set your breakpoints, your gutters, include the file and then you're done. Yeah, it's really that easy. However, if you're happy with the default options you don't even have to set anything at all, just including the file is enough.</p>
+        <p>SSGS uses something similar to the <a href="http://amcss.github.io/">AMCSS</a> syntax for its components. You create grids using <code>data-grid</code> and columns using <code>data-col</code>. Modifiers are passed as the attribute value. Once you see an example you'll understand it right away.</p>
+        <p>To keep things small and efficient, SSGS's CSS output is optimised to be as small as possible so you don't have to worry about code bloat.</p>
         <h2>Usage</h2>
-        <div class="grid">
-          <div class="code-sample">
+        <p>The following example creates a grid in which the columns span half the width on small screens and a quarter of the width on larger screens.</p>
+        <p>Column definitions follow the format <code>{n}-{x}</code>, meaning a column spanning <code>{n}</code> units of <code>{x}</code>. The prefixes are defined in your Sass inside the <code>$ssgs-prefixes</code> variable.</p>
+        <div data-grid>
+          <div data-col="M1-2">
             <h3>HTML</h3>
             <div class="code">
-              <pre><code class="language-markup"><span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">class</span>=<span class="attribute">"</span><span class="attribute-value">grid</span><span class="attribute">"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">class</span>=<span class="attribute">"</span><span class="attribute-value">item</span><span class="attribute">"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">class</span>=<span class="attribute">"</span><span class="attribute-value">item</span><span class="attribute">"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">class</span>=<span class="attribute">"</span><span class="attribute-value">item</span><span class="attribute">"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">class</span>=<span class="attribute">"</span><span class="attribute-value">item</span><span class="attribute">"</span><span class="tag">&gt;</span>
+              <pre><code><span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">data-grid</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">data-col</span>=<span class="attribute">"</span><span class="attribute-value">1-2 M1-4</span><span class="attribute">"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">data-col</span>=<span class="attribute">"</span><span class="attribute-value">1-2 M1-4</span><span class="attribute">"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">data-col</span>=<span class="attribute">"</span><span class="attribute-value">1-2 M1-4</span><span class="attribute">"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;</span><span class="tag-name">div </span><span class="attribute">data-col</span>=<span class="attribute">"</span><span class="attribute-value">1-2 M1-4</span><span class="attribute">"</span><span class="tag">&gt;</span>
 <span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span></code></pre>
             </div>
           </div>
-          <div class="code-sample">
+          <div class="code-sample" data-col="M1-2">
             <h3>SCSS</h3>
             <div class="code">
-              <pre><code class="language-css">.<span class="selector">item</span> {
-    @<span class="include">include</span> <span class="mixin">grid-col</span>;
+              <pre><code><span class="variable">$ssgs-columns</span>: <span class="number">2</span> <span class="number">4</span>;
+<span class="variable">$ssgs-prefixes</span>: (
+  <span class="string">'M'</span>: <span class="string">'(min-width: 30em)'</span>
+);
 
-    @<span class="media">media</span> (<span class="property">min-width</span>: <span class="number">30</span><span class="value">em</span>) {
-        @<span class="include">include</span> <span class="mixin">grid-col</span>(<span class="string">"one half"</span>);
-    }
-
-    @<span class="media">media</span> (<span class="property">min-width</span>: <span class="number">40</span><span class="value">em</span>) {
-        @<span class="include">include</span> <span class="mixin">grid-col</span>(<span class="string">"one third"</span>);
-    }
-
-    @<span class="media">media</span> (<span class="property">min-width</span>: <span class="number">50</span><span class="value">em</span>) {
-        @<span class="include">include</span> <span class="mixin">grid-col</span>(<span class="string">"one quarter"</span>);
-    }
-
-    @<span class="media">media</span> (<span class="property">min-width</span>: <span class="number">60</span><span class="value">em</span>) {
-        @<span class="include">include</span> <span class="mixin">grid-col</span>(<span class="string">"one sixth"</span>);
-    }
-}</code></pre>
+<span class="control">@import</span> <span class="string">'ssgs'</span>;</code></pre>
             </div>
           </div>
         </div>
-        <p>Yep, <b>that's it</b>.</p>
+        <h2>Options</h2>
+        <h3>In your HTML</h3>
+        <p>Grids have two modifiers. You can remove the gutters using <code>gutterless</code> or you can reverse the column order using <code>rev</code>. Of course, you can also combine the two or leave them out. If you combine them, make sure you always separate them with spaces.</p>
+        <div class="code code-short"><pre><code><span class="tag">&lt;</span><span class="tag-name">div</span> <span class="attribute">data-grid</span>=<span class="tag">"</span><span class="attribute-value">gutterless rev</span><span class="attribute">"</span><span class="tag">&gt;&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span></code></pre></div>
+        <p>Columns don't really have any options, apart from the column definition itself, of course. Leaving the attribute value out will give you a full-width column.</p>
+        <div class="code code-short"><pre><code><span class="tag">&lt;</span><span class="tag-name">div</span> <span class="attribute">data-col</span>=<span class="tag">"</span><span class="attribute-value">1-2 M1-4 L1-6</span><span class="tag">"</span><span class="tag">&gt;&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span></code></pre></div>
+        <h3>In your Sass</h3>
+        <p>The following options are available:</p>
+        <div data-grid>
+          <div class="option">
+            <div data-col="M1-4"><span class="variable">$ssgs-namespace</span></div>
+            <div data-col="M3-4">By default, you use SSGS grids with data-grid. Using this option you can change this to something else, e.g. data-ssgs.</div>
+          </div>
+          <div class="option">
+            <div data-col="M1-4"><span class="variable">$ssgs-columns-namespa</span></div>
+            <div data-col="M3-4">Same as $ssgs-namespace, but for grid columns (elements inside data-grid).</div>
+          </div>
+          <div class="option">
+            <div data-col="M1-4"><span class="variable">$ssgs-prefixes</span></div>
+            <div data-col="M3-4">Use this option to enable responsive behaviour. This option expects a map, consisting of pairs of prefixes (e.g. 'M') and media queries (e.g. '(min-width: 30em)'). This will tell SSGS to set up all fractions with the given prefix inside the given media query. This map can contain 0-to-n key-value pairs.</div>
+          </div>
+          <div class="option">
+            <div data-col="M1-4"><span class="variable">$ssgs-columns</span></div>
+            <div data-col="M3-4">Use this option to tell SSGS which columns to set up. This option expects either a one-dimensional or a two-dimensional list. Passing '2 3 4' would set up all columns (i.e. from '1-2' to '4-4'). If you pass a two dimensional list (e.g. '2 (1), 3 (1), 4 (3)'), SSGS would only set up the columns '1-2', '1-3' and '3-4'.</div>
+          </div>
+          <div class="option">
+            <div data-col="M1-4"><span class="variable">$ssgs-gutters</span></div>
+            <div data-col="M3-4">This option tells SSGS how wide gutters should be. Gutters in SSGS are fixed, while columns are fully flexible. That means you should pass values like px or em to this option.</div>
+          </div>
+        </div>
       </div>
     </section>
-    <section id="drawbacks">
-      <div class="wrap">
-        <h2>Drawbacks</h2>
-        <p>The only drawback I can think of right now is the dependency on <code class="language-css">box-sizing: border-box;</code> to work properly. But that's only an issue if you work with IE prior to version 8. And there's even a neat <a href="https://github.com/Schepp/box-sizing-polyfill" title="Christian Schaefer's box-sizing polyfill.">polyfill</a> available on GitHub. Since you're already working with Sass, just pop in Compass and import <code class="language-css">"compass/css3/box-sizing"</code> to make it even easier.</p>
-        <p>SSGS was initially created on <a href="http://codepen.io/sacha/pen/mLIkK">CodePen</a>.</p>
-      </div>
-    </section>
-    <footer>
-      <div class="wrap-narrow">
-        <p class="small copyright">SSGS is a thing by <a href="http://sachaschmid.ch" title="My personal website">Sacha Schmid</a>, created on <a href="http://codepen.io" title="CodePen is freaking awesome. Go try it out.">CodePen</a>. I tweet at <a href="http://twitter.com/sachaschmid">@sachaschmid</a>. I am the creator of <a href="http://radlikewhoa.github.com/Countable">Countable</a> and <a href="http://github.com/RadLikeWhoa">other open source projects</a>.</p>
-      </div>
-    </footer>
     <script>
       var _gaq = [['_setAccount', 'UA-39380123-2'], ['_trackPageview']];
       (function(d) {
