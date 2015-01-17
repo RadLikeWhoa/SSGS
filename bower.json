@@ -2,6 +2,6 @@
   "name": "SSGS",
   "private": true,
   "devDependencies": {
-    "SSGS": "~2.0.0"
+    "SSGS": "~2.0.1"
   }
 }
