@@ -19,6 +19,10 @@ To keep things small and efficient, SSGS's CSS output is optimised to be as smal
 
 ## Usage
 
+The following example creates a grid in which the columns span half the width on small screens and a quarter of the width on larger screens.
+
+Column definitions follow the format {n}-{x}, meaning a column spanning {n} units of {x}. The prefixes are defined in your Sass inside the $ssgs-prefixes variable.
+
 ```html
 <div data-grid>
   <div data-col="1-2 M1-4"></div>
