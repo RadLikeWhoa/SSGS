@@ -4,6 +4,8 @@ SSGS is a very easy-to-use grid system for the web. It allows you to quickly set
 
 [View it in action](http://sacha.me/SSGS)
 
+![SSGS in action](./ssgs.png)
+
 ## What's special about SSGS?
 
 With SSGS, creating a responsive grid system is easy. You set your breakpoints, your gutters, include the file and then you're done. Yeah, it's really that easy. However, if you're happy with the default options you don't even have to set anything at all, just including the file is enough.
