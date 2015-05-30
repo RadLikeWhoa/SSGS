@@ -167,12 +167,15 @@ code {
   font-family: Source Code Pro, Consolas, Monaco, Andale Mono, monospace;
 }
 
+.code pre {
+  margin-bottom: 0;
+}
+
 /* DEMO STUFF */
 
 .box {
   height: 4.5em;
   background-color: #eee;
-  border: 1px solid #ddd;
 }
 
 [data-grid] {
@@ -187,6 +190,7 @@ code {
   padding: 1.5em;
   color: #333;
   border: 1px solid #ddd;
+  border-radius: 3px;
   background-color: #eee;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
